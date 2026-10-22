@@ -15,7 +15,33 @@ const navigation = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
+
+  // Hide on downward scroll and reveal on upward scroll.
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const scrollDifference = currentScrollY - lastScrollY;
+
+      if (isOpen) {
+        setIsHidden(false);
+      } else if (currentScrollY < 80) {
+        setIsHidden(false);
+      } else if (Math.abs(scrollDifference) >= 8) {
+        setIsHidden(scrollDifference > 0);
+      }
+
+      if (Math.abs(scrollDifference) >= 8 || currentScrollY < 80) {
+        lastScrollY = currentScrollY;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
 
   // Close the menu when navigating to another page.
   useEffect(() => {
@@ -41,8 +67,18 @@ export default function Navbar() {
 
   return (
     <>
+      <div
+        aria-hidden="true"
+        onMouseEnter={() => setIsHidden(false)}
+        className="fixed inset-x-0 top-0 z-40 h-3"
+      />
+
       {/* Header */}
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-black/10 bg-white">
+      <header
+        className={`fixed inset-x-0 top-0 z-40 border-b border-black/10 bg-white transition-transform duration-300 ease-in-out ${
+          isHidden && !isOpen ? "-translate-y-full" : "translate-y-0"
+        }`}
+      >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
           {/* Replace with your company logo */}
           <Link
@@ -52,8 +88,8 @@ export default function Navbar() {
             <Image
               src="/assets/dez-logo.png"
               alt="Dez Logo"
-              width={150}
-              height={150}
+              width={60}
+              height={60}
             />
           </Link>
 

@@ -24,15 +24,13 @@ export default function Footer() {
               aria-label="DEZ Construction & Renovation home"
               className="inline-block"
             >
-              <div className="relative h-40 w-40 overflow-hidden">
-                <Image
-                  src="/assets/dez-logo.png"
-                  alt="DEZ Construction & Renovation"
-                  fill
-                  className="object-contain scale-200 -ml-10"
-                  priority
-                />
-              </div>
+              <Image
+                src="/assets/dez-logo.png"
+                alt="DEZ Construction & Renovation"
+                className="-ml-4"
+                width={100}
+                height={100}
+              />
             </Link>
 
             <p className="mt-2 max-w-md text-sm leading-7 text-white/60">

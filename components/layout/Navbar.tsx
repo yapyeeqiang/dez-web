@@ -68,7 +68,7 @@ export default function Navbar() {
           >
             <span className="hidden sm:inline">Menu</span>
 
-            <span className="flex w-7 flex-col items-end gap-[6px]">
+            <span className="flex w-7 flex-col items-end gap-1.5">
               <span className="h-px w-7 bg-current transition-all duration-300 group-hover:w-5" />
               <span className="h-px w-5 bg-current transition-all duration-300 group-hover:w-7" />
             </span>
@@ -95,7 +95,7 @@ export default function Navbar() {
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`fixed right-0 top-0 z-[60] flex h-dvh w-full max-w-[480px] flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:px-10 ${
+        className={`fixed right-0 top-0 z-60 flex h-dvh w-full max-w-120 flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:px-10 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

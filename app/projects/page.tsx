@@ -1,44 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
-
-const concepts = [
-  {
-    title: "Soft modern living",
-    type: "Living area",
-    description:
-      "A calm palette, generous seating, and tactile finishes create a relaxed centre for everyday life.",
-    image: "/images/services/luxe.jpg",
-    alt: "Softly lit modern living room",
-    number: "01",
-  },
-  {
-    title: "A home that gathers",
-    type: "Residential interior",
-    description:
-      "An inviting direction that brings natural tones and comfortable proportions into balance.",
-    image: "/images/services/dream-haven.jpg",
-    alt: "Warm contemporary residential interior",
-    number: "02",
-  },
-  {
-    title: "Warmth in the details",
-    type: "Material palette",
-    description:
-      "Layered finishes and subtle contrast give a simple interior depth and character.",
-    image: "/images/services/our-services.jpg",
-    alt: "Interior material palette and thoughtful detailing",
-    number: "03",
-  },
-  {
-    title: "A fresh perspective",
-    type: "Home renovation",
-    description:
-      "A brighter, more connected approach to the rooms where daily routines unfold.",
-    image: "/assets/villa-hero-1.jpg",
-    alt: "Contemporary home interior with a bright, open feel",
-    number: "04",
-  },
-];
+import Image from "next/image";
+import { projectConcepts } from "@/lib/projects";
 
 export default function Projects() {
   return (
@@ -63,23 +25,27 @@ export default function Projects() {
 
       <section className="mx-auto max-w-7xl px-6 py-14 sm:px-10 sm:py-20 lg:px-12">
         <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
-          {concepts.map((concept) => (
-            <article key={concept.number}>
+          {projectConcepts.map((concept) => (
+            <article key={concept.slug}>
+              <Link
+                href={`/projects/${concept.slug}`}
+                className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655]"
+              >
               <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
                 <Image
                   src={concept.image}
                   alt={concept.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
                 />
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a97655]">
-                    {concept.type} · Concept
+                    {concept.type} · Illustrative concept
                   </p>
-                  <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900">
+                  <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900 group-hover:text-[#8e6044]">
                     {concept.title}
                   </h2>
                 </div>
@@ -87,9 +53,16 @@ export default function Projects() {
                   {concept.number}
                 </span>
               </div>
+              </Link>
               <p className="mt-3 max-w-lg text-sm leading-6 text-neutral-600">
                 {concept.description}
               </p>
+              <Link
+                href={`/projects/${concept.slug}`}
+                className="mt-4 inline-flex min-h-10 items-center text-sm font-semibold text-neutral-900 underline decoration-[#a97655] underline-offset-4 hover:text-[#8e6044] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655]"
+              >
+                Explore this concept <span aria-hidden="true" className="ml-2">↗</span>
+              </Link>
             </article>
           ))}
         </div>

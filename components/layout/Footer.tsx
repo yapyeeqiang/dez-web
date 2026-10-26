@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const navigation = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 export default function Footer() {
@@ -34,13 +34,14 @@ export default function Footer() {
             </Link>
 
             <p className="mt-2 max-w-md text-sm leading-7 text-white/60">
-              Thoughtfully built. Beautifully lived. We bring spaces to life
-              through considered craftsmanship and a commitment to quality.
+              Thoughtfully planned. Carefully built. We bring residential,
+              commercial, and industrial spaces to life through considered
+              craftsmanship and a commitment to quality.
             </p>
 
             <Link
-              href="/contact"
-              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#C6A15B] transition-colors hover:text-white"
+              href="/contact-us"
+              className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-[#C6A15B] hover:text-white"
             >
               Start your project
               <span aria-hidden="true" className="font-sans">
@@ -60,7 +61,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-[#C6A15B]"
+                    className="inline-flex items-center gap-2 text-sm text-white/60 hover:text-[#C6A15B]"
                   >
                     {item.label}
                     <span aria-hidden="true" className="font-sans text-xs">
@@ -84,8 +85,8 @@ export default function Footer() {
             </p>
 
             <Link
-              href="/contact"
-              className="mt-4 inline-flex items-center gap-2 text-sm text-white transition-colors hover:text-[#C6A15B]"
+              href="/contact-us"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-white hover:text-[#C6A15B]"
             >
               Contact our team
               <span aria-hidden="true" className="font-sans">
@@ -95,11 +96,14 @@ export default function Footer() {
 
             {/* Add verified business details when available */}
 
-            <p className="mt-6 text-sm text-white/60">
-              Email: hello@yourdomain.com
-            </p>
-            <p className="mt-2 text-sm text-white/60">
-              Phone: +60 XX-XXXX XXXX
+            <a
+              href="mailto:hello@yourdomain.com"
+              className="mt-6 inline-block text-sm text-white/60 hover:text-[#C6A15B]"
+            >
+              hello@yourdomain.com
+            </a>
+            <p className="mt-2 text-xs leading-5 text-white/40">
+              Sample inbox — replace before launch
             </p>
           </div>
         </div>

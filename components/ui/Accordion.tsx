@@ -43,19 +43,17 @@ export default function Accordion({
               aria-expanded={isOpen}
               aria-controls={panelId}
               onClick={() => toggleItem(index)}
-              className="flex w-full items-center justify-between gap-6 py-5 text-left group hover:cursor-pointer"
+              className="group flex w-full items-center justify-between gap-6 py-5 text-left hover:cursor-pointer"
             >
-              <span className="text-lg md:text-xl font-medium text-neutral-900 transition-colors group-hover:text-[#B08D4F] group-hover:cursor-pointer">
+              <span className="text-lg font-medium text-neutral-900 group-hover:text-[#B08D4F] group-hover:cursor-pointer md:text-xl">
                 {item.title}
               </span>
 
               <span
                 aria-hidden="true"
-                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-xl text-neutral-700 transition-transform duration-300 ease-in-out group-hover:border-[#B08D4F] group-hover:text-[#B08D4F] group-hover:cursor-pointer ${
-                  isOpen ? "rotate-45" : "rotate-0"
-                }`}
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-xl text-neutral-700 group-hover:border-[#B08D4F] group-hover:text-[#B08D4F] group-hover:cursor-pointer"
               >
-                +
+                {isOpen ? "−" : "+"}
               </span>
             </button>
 
@@ -64,17 +62,11 @@ export default function Accordion({
               role="region"
               aria-labelledby={triggerId}
               aria-hidden={!isOpen}
-              className={`grid transition-[grid-template-rows,opacity] duration-500 ease-in-out ${
-                isOpen
-                  ? "grid-rows-[1fr] opacity-100"
-                  : "grid-rows-[0fr] opacity-0"
-              }`}
+              className={isOpen ? "block" : "hidden"}
             >
-              <div className="overflow-hidden">
-                <p className="pb-5 pr-12 leading-7 text-neutral-600">
-                  {item.content}
-                </p>
-              </div>
+              <p className="pb-5 pr-12 leading-7 text-neutral-600">
+                {item.content}
+              </p>
             </div>
           </div>
         );

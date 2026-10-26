@@ -5,8 +5,9 @@ import Footer from "@/components/layout/Footer";
 import { Dancing_Script } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "DEZ Construction & Renovation",
-  description: "Professional construction and renovation services.",
+  title: "DEZ Construction & Renovation | Malaysia",
+  description:
+    "Thoughtful renovation, design, and project coordination for residential, commercial, and industrial properties.",
 };
 
 const dancing = Dancing_Script({
@@ -26,7 +27,7 @@ export default function RootLayout({
       <body className={`${dancing.variable} antialiased`}>
         <Navbar />
 
-        <main className="py-20">{children}</main>
+        <main className="pt-20">{children}</main>
 
         <Footer />
       </body>

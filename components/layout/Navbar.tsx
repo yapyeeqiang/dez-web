@@ -15,33 +15,7 @@ const navigation = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
   const pathname = usePathname();
-
-  // Hide on downward scroll and reveal on upward scroll.
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const scrollDifference = currentScrollY - lastScrollY;
-
-      if (isOpen) {
-        setIsHidden(false);
-      } else if (currentScrollY < 80) {
-        setIsHidden(false);
-      } else if (Math.abs(scrollDifference) >= 8) {
-        setIsHidden(scrollDifference > 0);
-      }
-
-      if (Math.abs(scrollDifference) >= 8 || currentScrollY < 80) {
-        lastScrollY = currentScrollY;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isOpen]);
 
   // Close the menu when navigating to another page.
   useEffect(() => {
@@ -67,17 +41,9 @@ export default function Navbar() {
 
   return (
     <>
-      <div
-        aria-hidden="true"
-        onMouseEnter={() => setIsHidden(false)}
-        className="fixed inset-x-0 top-0 z-40 h-3"
-      />
-
       {/* Header */}
       <header
-        className={`fixed inset-x-0 top-0 z-40 border-b border-black/10 bg-white transition-transform duration-300 ease-in-out ${
-          isHidden && !isOpen ? "-translate-y-full" : "translate-y-0"
-        }`}
+        className="fixed inset-x-0 top-0 z-40 border-b border-black/10 bg-white"
       >
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-10">
           {/* Replace with your company logo */}
@@ -105,8 +71,8 @@ export default function Navbar() {
             <span className="hidden sm:inline">Menu</span>
 
             <span className="flex w-7 flex-col items-end gap-1.5">
-              <span className="h-px w-7 bg-current transition-all duration-300 group-hover:w-5" />
-              <span className="h-px w-5 bg-current transition-all duration-300 group-hover:w-7" />
+              <span className="h-px w-7 bg-current" />
+              <span className="h-px w-5 bg-current" />
             </span>
           </button>
         </div>
@@ -116,7 +82,7 @@ export default function Navbar() {
       <div
         aria-hidden="true"
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-300 ${
+        className={`fixed inset-0 z-50 bg-black/50 ${
           isOpen
             ? "visible opacity-100"
             : "invisible pointer-events-none opacity-0"
@@ -131,7 +97,7 @@ export default function Navbar() {
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`fixed right-0 top-0 z-60 flex h-dvh w-full max-w-120 flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:px-10 ${
+        className={`fixed right-0 top-0 z-60 flex h-dvh w-full max-w-120 flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 sm:px-10 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -146,7 +112,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             aria-label="Close navigation menu"
             tabIndex={isOpen ? 0 : -1}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 transition-colors hover:cursor-pointer hover:bg-black hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 hover:cursor-pointer hover:bg-black hover:text-white"
           >
             <svg
               viewBox="0 0 24 24"
@@ -164,7 +130,7 @@ export default function Navbar() {
         {/* Navigation links */}
         <nav className="flex flex-1 flex-col justify-center" aria-label="Pages">
           <ul className="space-y-1">
-            {navigation.map((item, index) => {
+            {navigation.map((item) => {
               const isActive =
                 pathname === item.href ||
                 (item.href !== "/" && pathname.startsWith(`${item.href}/`));
@@ -176,11 +142,11 @@ export default function Navbar() {
                     tabIndex={isOpen ? 0 : -1}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "page" : undefined}
-                    className="group flex items-center justify-between border-b border-black/10 py-4 text-3xl font-light tracking-tight text-neutral-900 transition-colors hover:text-neutral-500 sm:py-5 sm:text-4xl"
+                    className="group flex items-center justify-between border-b border-black/10 py-4 text-3xl font-light tracking-tight text-neutral-900 hover:text-neutral-500 sm:py-5 sm:text-4xl"
                   >
                     <span>{item.label}</span>
 
-                    <span className="text-lg text-neutral-400 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-neutral-900">
+                    <span className="text-lg text-neutral-400 group-hover:text-neutral-900">
                       ↗
                     </span>
                   </Link>
@@ -200,7 +166,7 @@ export default function Navbar() {
             href="/contact-us"
             tabIndex={isOpen ? 0 : -1}
             onClick={() => setIsOpen(false)}
-            className="mt-3 inline-flex items-center gap-2 text-base font-medium text-neutral-900 underline underline-offset-4 transition-opacity hover:opacity-60"
+            className="mt-3 inline-flex items-center gap-2 text-base font-medium text-neutral-900 underline underline-offset-4 hover:opacity-60"
           >
             Let&apos;s talk
           </Link>

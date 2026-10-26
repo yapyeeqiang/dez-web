@@ -17,9 +17,9 @@ export default function ProjectExplorer({
     <div>
       <section
         aria-label={`${project.title} concept image gallery`}
-        className="mx-auto max-w-[90rem] px-6 pb-16 sm:px-10 lg:px-16"
+        className="mx-auto max-w-360 px-6 pb-16 sm:px-10 lg:px-16"
       >
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#e7e1d8] sm:aspect-[16/8]">
+        <div className="relative aspect-4/3 overflow-hidden bg-[#e7e1d8] sm:aspect-16/8">
           <Image
             key={project.gallery[activeImage].src}
             src={project.gallery[activeImage].src}
@@ -29,7 +29,7 @@ export default function ProjectExplorer({
             sizes="(max-width: 640px) 100vw, 90vw"
             className="object-cover"
           />
-          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-black/60 to-transparent px-5 pb-5 pt-16 text-white sm:px-8 sm:pb-7">
+          <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-linear-to-t from-black/60 to-transparent px-5 pb-5 pt-16 text-white sm:px-8 sm:pb-7">
             <p className="max-w-sm text-sm leading-6 text-white/85">
               Concept imagery for visual direction. Final selections depend on
               your property and brief.
@@ -50,8 +50,10 @@ export default function ProjectExplorer({
               onClick={() => setActiveImage(index)}
               aria-label={`Show image ${index + 1}: ${image.alt}`}
               aria-pressed={activeImage === index}
-              className={`group relative aspect-[4/3] overflow-hidden bg-[#e7e1d8] outline-offset-4 focus-visible:outline-2 focus-visible:outline-[#a97655] ${
-                activeImage === index ? "ring-2 ring-[#a97655] ring-offset-2" : ""
+              className={`group relative aspect-4/3 overflow-hidden bg-[#e7e1d8] outline-offset-4 focus-visible:outline-2 focus-visible:outline-[#a97655] ${
+                activeImage === index
+                  ? "ring-2 ring-[#a97655] ring-offset-2"
+                  : ""
               }`}
             >
               <Image
@@ -103,7 +105,11 @@ export default function ProjectExplorer({
                 </button>
               ))}
             </div>
-            <div aria-live="polite" aria-atomic="true" className="min-h-64 pt-7">
+            <div
+              aria-live="polite"
+              aria-atomic="true"
+              className="min-h-64 pt-7"
+            >
               <h3 className="font-serif text-3xl font-medium tracking-tight text-neutral-900 sm:text-4xl">
                 {lens.title}
               </h3>

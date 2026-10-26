@@ -70,7 +70,10 @@ async function ProjectDetailContent({ params }: ProjectPageProps) {
           </div>
         </div>
         <p className="mb-5 inline-flex items-center gap-2 border border-[#a97655]/40 bg-[#f5f2ed] px-3 py-2 text-xs font-medium text-neutral-700">
-          <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-[#a97655]" />
+          <span
+            aria-hidden="true"
+            className="h-1.5 w-1.5 rounded-full bg-[#a97655]"
+          />
           Illustrative concept · Not a completed client project
         </p>
       </div>
@@ -113,7 +116,7 @@ function ProjectDetailFallback() {
       <div className="h-5 w-36 bg-neutral-200" />
       <div className="mt-9 h-14 max-w-2xl bg-neutral-200 sm:h-20" />
       <div className="mt-4 h-5 max-w-xl bg-neutral-100" />
-      <div className="mt-8 aspect-[4/3] bg-neutral-100 sm:aspect-[16/8]" />
+      <div className="mt-8 aspect-4/3 bg-neutral-100 sm:aspect-16/8" />
     </div>
   );
 }

@@ -56,7 +56,7 @@ export default function Home() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/25 to-black/10" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-24 text-white sm:px-10 sm:pb-20 lg:px-12 lg:pb-24">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-white/80">
             DEZ Construction &amp; Renovation
@@ -66,8 +66,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
             Thoughtful renovation, considered design, and dependable project
-            coordination for residential, commercial, and industrial
-            properties.
+            coordination for residential, commercial, and industrial properties.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
@@ -96,9 +95,9 @@ export default function Home() {
           </h2>
           <p className="mt-6 max-w-xl leading-7 text-neutral-600">
             Every property and every brief is different. We bring design
-            thinking and construction planning together, making decisions
-            easier to understand from the first conversation through to the
-            finishing details.
+            thinking and construction planning together, making decisions easier
+            to understand from the first conversation through to the finishing
+            details.
           </p>
           <Link
             href="/about-us"
@@ -107,7 +106,7 @@ export default function Home() {
             Get to know DEZ
           </Link>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#eee9e3]">
+        <div className="relative aspect-4/3 overflow-hidden bg-[#eee9e3]">
           <Image
             src="/assets/house-frame.png"
             alt="Architectural line drawing of a home"
@@ -145,7 +144,7 @@ export default function Home() {
           <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {projectConcepts.map((project) => (
               <article key={project.title} className="bg-white">
-                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+                <div className="relative aspect-4/3 overflow-hidden bg-neutral-200">
                   <Image
                     src={project.image}
                     alt={project.alt}

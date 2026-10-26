@@ -82,10 +82,10 @@ export default function Navbar() {
       <div
         aria-hidden="true"
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-50 bg-black/50 ${
+        className={`fixed inset-0 z-50 bg-black/50 transition-opacity duration-500 ease-out motion-reduce:transition-none ${
           isOpen
-            ? "visible opacity-100"
-            : "invisible pointer-events-none opacity-0"
+            ? "pointer-events-auto opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
       />
 
@@ -97,8 +97,10 @@ export default function Navbar() {
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`fixed right-0 top-0 z-60 flex h-dvh w-full max-w-120 flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 sm:px-10 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed right-0 top-0 z-60 flex h-dvh w-full max-w-120 flex-col bg-[#f5f3ee] px-7 pb-8 pt-6 transition-[translate,scale,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none sm:px-10 ${
+          isOpen
+            ? "translate-x-0 scale-100 opacity-100"
+            : "pointer-events-none translate-x-full scale-[0.98] opacity-0"
         }`}
       >
         {/* Drawer header */}
@@ -112,7 +114,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
             aria-label="Close navigation menu"
             tabIndex={isOpen ? 0 : -1}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 hover:cursor-pointer hover:bg-black hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 hover:cursor-pointer hover:bg-black hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655]"
           >
             <svg
               viewBox="0 0 24 24"
@@ -142,11 +144,11 @@ export default function Navbar() {
                     tabIndex={isOpen ? 0 : -1}
                     onClick={() => setIsOpen(false)}
                     aria-current={isActive ? "page" : undefined}
-                    className="group flex items-center justify-between border-b border-black/10 py-4 text-3xl font-light tracking-tight text-neutral-900 hover:text-neutral-500 sm:py-5 sm:text-4xl"
+                    className="group flex items-center justify-between border-b border-black/10 py-4 text-3xl font-light tracking-tight text-neutral-900 hover:text-neutral-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655] sm:py-5 sm:text-4xl"
                   >
                     <span>{item.label}</span>
 
-                    <span className="text-lg text-neutral-400 group-hover:text-neutral-900">
+                    <span className="translate-x-0 text-lg text-neutral-400 transition-[color,transform] duration-300 ease-out group-hover:translate-x-1 group-hover:text-neutral-900 motion-reduce:transition-none">
                       ↗
                     </span>
                   </Link>

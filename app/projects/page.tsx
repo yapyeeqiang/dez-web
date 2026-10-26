@@ -45,7 +45,7 @@ export default function Projects() {
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a97655]">
                       {concept.type} · Illustrative concept
                     </p>
-                    <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900 group-hover:text-[#8e6044]">
+                    <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900 transition-colors duration-300 ease-out group-hover:text-[#8e6044] motion-reduce:transition-none">
                       {concept.title}
                     </h2>
                   </div>

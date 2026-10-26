@@ -7,3 +7,66 @@
 html {
   overflow-x: clip;
 }
+
+:where(a, button, input, select, textarea, [role="button"]) {
+  transition:
+    color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    text-decoration-color 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    text-underline-offset 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a:is([class*="inline-flex"], [class*="inline-block"], [class~="block"], [class~="flex"]),
+button,
+[role="button"] {
+  transition:
+    color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    text-decoration-color 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a:not([class*="bg-"]):hover,
+button:not(:disabled, [class*="bg-"]):hover,
+[role="button"]:hover {
+  color: #a97655;
+  border-color: #a97655;
+}
+
+a:is([class*="inline-flex"], [class*="inline-block"], [class~="block"], [class~="flex"]):active,
+button:not(:disabled):active,
+[role="button"]:active {
+  transform: scale(0.98);
+}
+
+:where(a, button, input, select, textarea, [role="button"]):focus-visible {
+  outline: 2px solid #a97655;
+  outline-offset: 4px;
+  box-shadow: 0 0 0 5px rgb(169 118 85 / 14%);
+}
+
+:where(input, select, textarea):hover {
+  border-color: rgb(169 118 85 / 65%);
+}
+
+:where(input, select, textarea):focus-visible {
+  border-color: #a97655;
+  box-shadow: 0 0 0 3px rgb(169 118 85 / 16%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(a, button, input, select, textarea, [role="button"]) {
+    transition-duration: 0.01ms;
+  }
+
+  a:is([class*="inline-flex"], [class*="inline-block"], [class~="block"], [class~="flex"]):active,
+  button:not(:disabled):active,
+  [role="button"]:active {
+    transform: none;
+  }
+}

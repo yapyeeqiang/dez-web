@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="relative w-full h-full">
       {/* Hero section */}
-      <section className="relative h-screen w-full">
+      <section className="relative h-[calc(100svh-5rem)] w-full lg:h-screen">
         <Image
           src="/assets/villa-hero-1.jpg"
           alt="DEZ construction project"
@@ -16,9 +16,11 @@ export default function Home() {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-8">
-          <h1 className="text-5xl font-bold">A Better Space Starts Here.</h1>
-          <p className="mt-4 text-lg lg:w-4xl">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white sm:px-8">
+          <h1 className="text-4xl font-bold sm:text-5xl">
+            A Better Space Starts Here.
+          </h1>
+          <p className="mt-4 max-w-3xl text-base sm:text-lg">
             Every home has a story. We help you shape yours with thoughtful
             renovations, reliable workmanship, and spaces designed around the
             way you live.
@@ -35,17 +37,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex justify-center items-center py-40 px-20">
-        <div className="max-w-5xl flex gap-12">
+      <section className="flex items-center justify-center px-6 py-20 sm:px-10 md:px-12 md:py-40 lg:px-20">
+        <div className="flex w-full max-w-5xl flex-col gap-10 md:flex-row md:gap-12">
           {/* Meet Dez */}
-          <div className="flex-1 flex flex-col justify-center">
+          <div className="flex flex-1 flex-col justify-center">
             <span className="text-[#AF7B5B] font-semibold">
               Meet Dez Construction & Renovation
             </span>
 
             <div className="mt-4">
-              <p className="text-5xl italic">Influential</p>
-              <p className="text-5xl font-semibold">and Impactful.</p>
+              <p className="text-4xl italic sm:text-5xl">Influential</p>
+              <p className="text-4xl font-semibold sm:text-5xl">
+                and Impactful.
+              </p>
             </div>
 
             <p className="font-medium text-gray-500 mt-6">
@@ -60,20 +64,23 @@ export default function Home() {
           </div>
 
           {/* Image */}
-          <div className="flex-1 flex items-center justify-center relative">
-            <div className="relative h-full w-full">
+          <div className="relative flex aspect-square w-full flex-1 items-center justify-center overflow-hidden md:aspect-auto md:min-h-96">
+            <div className="absolute inset-0">
               <Image
                 src="/assets/house-frame.png"
                 alt="House Frame"
                 fill
-                className="object-contain scale-150"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="scale-100 object-contain md:scale-150"
               />
             </div>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <p className="text-sm text-[#444] font-semibold">Helps Almost</p>
 
-              <p className="text-9xl text-[#444] font-bold mt-2">11,264</p>
+              <p className="mt-2 text-6xl font-bold text-[#444] sm:text-7xl md:text-8xl lg:text-9xl">
+                11,264
+              </p>
 
               <p className="text-sm text-[#444] font-semibold mt-4">
                 Home owner

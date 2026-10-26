@@ -3,3 +3,7 @@
 @theme inline {
   --font-dancing: var(--font-dancing-script);
 }
+
+html {
+  overflow-x: clip;
+}

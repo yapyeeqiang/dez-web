@@ -28,7 +28,7 @@ export default function Services() {
   return (
     <div className="relative w-full h-full">
       {/* Hero section */}
-      <section className="relative h-screen w-full">
+      <section className="relative h-[calc(100svh-5rem)] w-full lg:h-screen">
         <Image
           src="/images/services/hero.jpg"
           alt="Services hero"
@@ -39,7 +39,7 @@ export default function Services() {
 
         <div className="absolute inset-0 bg-black/40" />
 
-        <div className="absolute inset-0 flex flex-col justify-center text-white px-8 max-w-7xl mx-auto">
+        <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-center px-6 text-white sm:px-10">
           <div className="bg-[#AF7B5B] w-fit px-4 rounded-full">
             <p className="uppercase text-white font-bold text-sm">
               Our Services
@@ -47,10 +47,10 @@ export default function Services() {
           </div>
 
           <div className="flex flex-col mt-8">
-            <h2 className="text-7xl md:text-8xl lg:text-9xl font-dancing font-semibold">
+            <h2 className="font-dancing text-5xl font-semibold sm:text-6xl md:text-8xl lg:text-9xl">
               Influential
             </h2>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold w-50">
+            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl md:text-7xl lg:text-8xl">
               and impactful
             </h1>
           </div>

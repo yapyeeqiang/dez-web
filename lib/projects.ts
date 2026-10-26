@@ -25,7 +25,7 @@ export const projectConcepts: ProjectConcept[] = [
     type: "Living area",
     description:
       "A calm palette, generous seating, and tactile finishes create a relaxed centre for everyday life.",
-    image: "/images/services/luxe.jpg",
+    image: "/images/editorial/living-room.jpg",
     alt: "Softly lit modern living room",
     number: "01",
     location: "Residential concept",
@@ -33,13 +33,16 @@ export const projectConcepts: ProjectConcept[] = [
     introduction:
       "A living room should hold the rhythm of real life: slow mornings, busy evenings, and everything in between. This concept explores a warmer, more grounded take on modern living.",
     gallery: [
-      { src: "/images/services/luxe.jpg", alt: "Soft contemporary living room" },
       {
-        src: "/images/services/dream-haven.jpg",
+        src: "/images/editorial/living-room.jpg",
+        alt: "Soft contemporary living room",
+      },
+      {
+        src: "/images/editorial/warm-interior.jpg",
         alt: "Warm residential interior with natural finishes",
       },
       {
-        src: "/images/services/our-services.jpg",
+        src: "/images/editorial/interior-details.jpg",
         alt: "Considered interior finish details",
       },
     ],
@@ -73,7 +76,7 @@ export const projectConcepts: ProjectConcept[] = [
     type: "Residential interior",
     description:
       "An inviting direction that brings natural tones and comfortable proportions into balance.",
-    image: "/images/services/dream-haven.jpg",
+    image: "/images/editorial/warm-interior.jpg",
     alt: "Warm contemporary residential interior",
     number: "02",
     location: "Residential concept",
@@ -82,12 +85,15 @@ export const projectConcepts: ProjectConcept[] = [
       "The best gathering spaces make connection feel effortless. This concept looks at how warm materials, comfortable proportions, and an open feel can help a home bring people together.",
     gallery: [
       {
-        src: "/images/services/dream-haven.jpg",
+        src: "/images/editorial/warm-interior.jpg",
         alt: "Comfortable modern home interior",
       },
-      { src: "/images/services/luxe.jpg", alt: "Layered contemporary living space" },
       {
-        src: "/assets/villa-hero-1.jpg",
+        src: "/images/editorial/living-room.jpg",
+        alt: "Layered contemporary living space",
+      },
+      {
+        src: "/images/editorial/home-hero.jpg",
         alt: "Open and inviting contemporary home",
       },
     ],
@@ -121,7 +127,7 @@ export const projectConcepts: ProjectConcept[] = [
     type: "Material palette",
     description:
       "Layered finishes and subtle contrast give a simple interior depth and character.",
-    image: "/images/services/our-services.jpg",
+    image: "/images/editorial/interior-details.jpg",
     alt: "Interior material palette and thoughtful detailing",
     number: "03",
     location: "Interior concept",
@@ -130,12 +136,15 @@ export const projectConcepts: ProjectConcept[] = [
       "A considered room is often shaped by what you notice slowly. This concept explores how a thoughtful mix of finishes can bring quiet character to a clean, simple interior.",
     gallery: [
       {
-        src: "/images/services/our-services.jpg",
+        src: "/images/editorial/interior-details.jpg",
         alt: "Refined interior materials and detailing",
       },
-      { src: "/images/services/luxe.jpg", alt: "Living space with layered finishes" },
       {
-        src: "/images/services/dream-haven.jpg",
+        src: "/images/editorial/about-hero.jpg",
+        alt: "Living space with layered finishes",
+      },
+      {
+        src: "/images/editorial/warm-interior.jpg",
         alt: "Warm interior with a balanced material palette",
       },
     ],
@@ -169,7 +178,7 @@ export const projectConcepts: ProjectConcept[] = [
     type: "Home renovation",
     description:
       "A brighter, more connected approach to the rooms where daily routines unfold.",
-    image: "/assets/villa-hero-1.jpg",
+    image: "/images/editorial/homeowner-stat.jpg",
     alt: "Contemporary home interior with a bright, open feel",
     number: "04",
     location: "Residential concept",
@@ -178,11 +187,17 @@ export const projectConcepts: ProjectConcept[] = [
       "When daily routines feel crowded, a fresh look at flow can change how a home feels. This concept considers light, connection, and the practical moments between rooms.",
     gallery: [
       {
-        src: "/assets/villa-hero-1.jpg",
-        alt: "Contemporary home with a bright open feel",
+        src: "/images/editorial/homeowner-stat.jpg",
+        alt: "Contemporary home surrounded by mature trees",
       },
-      { src: "/images/services/dream-haven.jpg", alt: "Warm and welcoming home interior" },
-      { src: "/images/services/luxe.jpg", alt: "Light-filled contemporary living space" },
+      {
+        src: "/images/editorial/about-hero.jpg",
+        alt: "Warm and welcoming home interior",
+      },
+      {
+        src: "/images/editorial/living-room.jpg",
+        alt: "Light-filled contemporary living space",
+      },
     ],
     lenses: [
       {

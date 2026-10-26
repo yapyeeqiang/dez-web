@@ -27,8 +27,8 @@ export default function AboutUs() {
     <div>
       <section className="relative flex min-h-88 items-end overflow-hidden bg-neutral-900 sm:min-h-112">
         <Image
-          src="/images/services/our-services.jpg"
-          alt="A thoughtfully finished contemporary interior"
+          src="/images/editorial/about-hero.jpg"
+          alt="Contemporary home interior with wood accents and open living spaces"
           fill
           priority
           sizes="100vw"
@@ -78,8 +78,8 @@ export default function AboutUs() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-10 md:grid-cols-2 md:items-center md:gap-16 md:py-24 lg:px-12">
           <div className="relative order-2 aspect-4/3 overflow-hidden bg-neutral-200 md:order-1">
             <Image
-              src="/images/services/dream-haven.jpg"
-              alt="A comfortable home interior with warm materials"
+              src="/images/editorial/warm-interior.jpg"
+              alt="Comfortable living room with natural textures and warm neutral tones"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

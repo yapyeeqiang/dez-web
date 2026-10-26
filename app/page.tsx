@@ -6,19 +6,19 @@ const projectConcepts = [
   {
     title: "A quieter kind of luxury",
     type: "Living room · Concept direction",
-    image: "/images/services/luxe.jpg",
+    image: "/images/editorial/living-room.jpg",
     alt: "Warm contemporary living room with layered materials",
   },
   {
     title: "Room to gather",
     type: "Family home · Concept direction",
-    image: "/images/services/dream-haven.jpg",
+    image: "/images/editorial/warm-interior.jpg",
     alt: "Comfortable modern home interior",
   },
   {
     title: "A considered first impression",
     type: "Interior finishes · Concept direction",
-    image: "/images/services/our-services.jpg",
+    image: "/images/editorial/interior-details.jpg",
     alt: "Refined interior materials and detailing",
   },
 ];
@@ -49,8 +49,8 @@ export default function Home() {
     <div>
       <section className="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden bg-neutral-900 lg:min-h-[calc(100svh-5rem)]">
         <Image
-          src="/assets/villa-hero-1.jpg"
-          alt="Warm, contemporary residential interior"
+          src="/images/editorial/home-hero.jpg"
+          alt="Sunlit contemporary living room with warm wood finishes"
           fill
           priority
           sizes="100vw"
@@ -113,18 +113,16 @@ export default function Home() {
               alt="Architectural line drawing of a home"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain p-6 sm:p-10"
+              className="object-cover"
             />
           </div>
 
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <p className="text-base font-semibold text-[#444] sm:text-lg">
-              Helps Almost
-            </p>
-            <p className="mt-2 text-7xl font-bold text-[#444] sm:text-8xl lg:text-9xl">
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <p className="text-base font-semibold sm:text-lg">Helps Almost</p>
+            <p className="mt-2 whitespace-nowrap text-[clamp(3.5rem,16vw,5.5rem)] font-bold leading-none sm:text-8xl lg:text-9xl">
               11,264
             </p>
-            <p className="mt-4 text-base font-semibold text-[#444] sm:text-lg">
+            <p className="mt-4 text-base font-semibold sm:text-lg">
               Home owner
             </p>
           </div>

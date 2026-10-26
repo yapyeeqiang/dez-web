@@ -82,8 +82,8 @@ export default function Services() {
     <div>
       <section className="relative flex min-h-[calc(100svh-5rem)] items-end overflow-hidden bg-neutral-900">
         <Image
-          src="/images/services/hero.jpg"
-          alt="Contemporary interior for a residential renovation"
+          src="/images/editorial/services-hero.jpg"
+          alt="Contemporary interior with a sculptural staircase and timber details"
           fill
           priority
           sizes="100vw"
@@ -174,8 +174,8 @@ export default function Services() {
           </div>
           <div className="relative aspect-4/3 overflow-hidden bg-neutral-200">
             <Image
-              src="/images/services/dream-haven.jpg"
-              alt="A welcoming residential interior with balanced materials"
+              src="/images/editorial/commercial-space.jpg"
+              alt="Modern commercial office interior with glass partitions"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

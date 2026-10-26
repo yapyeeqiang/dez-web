@@ -31,28 +31,28 @@ export default function Projects() {
                 href={`/projects/${concept.slug}`}
                 className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655]"
               >
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
-                <Image
-                  src={concept.image}
-                  alt={concept.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
-                />
-              </div>
-              <div className="mt-5 flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a97655]">
-                    {concept.type} · Illustrative concept
-                  </p>
-                  <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900 group-hover:text-[#8e6044]">
-                    {concept.title}
-                  </h2>
+                <div className="relative aspect-4/3 overflow-hidden bg-neutral-200">
+                  <Image
+                    src={concept.image}
+                    alt={concept.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transition-none"
+                  />
                 </div>
-                <span className="pt-1 text-sm text-neutral-400">
-                  {concept.number}
-                </span>
-              </div>
+                <div className="mt-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a97655]">
+                      {concept.type} · Illustrative concept
+                    </p>
+                    <h2 className="mt-2 text-2xl font-medium tracking-tight text-neutral-900 group-hover:text-[#8e6044]">
+                      {concept.title}
+                    </h2>
+                  </div>
+                  <span className="pt-1 text-sm text-neutral-400">
+                    {concept.number}
+                  </span>
+                </div>
               </Link>
               <p className="mt-3 max-w-lg text-sm leading-6 text-neutral-600">
                 {concept.description}
@@ -61,7 +61,10 @@ export default function Projects() {
                 href={`/projects/${concept.slug}`}
                 className="mt-4 inline-flex min-h-10 items-center text-sm font-semibold text-neutral-900 underline decoration-[#a97655] underline-offset-4 hover:text-[#8e6044] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a97655]"
               >
-                Explore this concept <span aria-hidden="true" className="ml-2">↗</span>
+                Explore this concept{" "}
+                <span aria-hidden="true" className="ml-2">
+                  ↗
+                </span>
               </Link>
             </article>
           ))}

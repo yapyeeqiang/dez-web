@@ -106,14 +106,28 @@ export default function Home() {
             Get to know DEZ
           </Link>
         </div>
-        <div className="relative aspect-4/3 overflow-hidden bg-[#eee9e3]">
-          <Image
-            src="/assets/house-frame.png"
-            alt="Architectural line drawing of a home"
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-contain p-6 sm:p-10"
-          />
+        <div className="relative flex aspect-4/3 items-center justify-center overflow-hidden">
+          <div className="relative h-full w-full">
+            <Image
+              src="/assets/house-frame.png"
+              alt="Architectural line drawing of a home"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain p-6 sm:p-10"
+            />
+          </div>
+
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+            <p className="text-base font-semibold text-[#444] sm:text-lg">
+              Helps Almost
+            </p>
+            <p className="mt-2 text-7xl font-bold text-[#444] sm:text-8xl lg:text-9xl">
+              11,264
+            </p>
+            <p className="mt-4 text-base font-semibold text-[#444] sm:text-lg">
+              Home owner
+            </p>
+          </div>
         </div>
       </section>
 

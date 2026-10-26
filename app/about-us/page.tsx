@@ -25,7 +25,7 @@ const values = [
 export default function AboutUs() {
   return (
     <div>
-      <section className="relative flex min-h-[22rem] items-end overflow-hidden bg-neutral-900 sm:min-h-[28rem]">
+      <section className="relative flex min-h-88 items-end overflow-hidden bg-neutral-900 sm:min-h-112">
         <Image
           src="/images/services/our-services.jpg"
           alt="A thoughtfully finished contemporary interior"
@@ -34,7 +34,7 @@ export default function AboutUs() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 to-black/15" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/65 to-black/15" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-12 pt-24 text-white sm:px-10 sm:pb-16 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
             About DEZ
@@ -57,13 +57,13 @@ export default function AboutUs() {
         <div className="space-y-5 text-base leading-7 text-neutral-600">
           <p>
             DEZ Construction &amp; Renovation brings design and building
-            together across residential, commercial, and industrial
-            properties. We care about how a space looks, how it works, and how
-            the decisions behind it come together.
+            together across residential, commercial, and industrial properties.
+            We care about how a space looks, how it works, and how the decisions
+            behind it come together.
           </p>
           <p>
-            Whether you are planning a home renovation, a commercial refresh,
-            or improvements to an industrial property, our approach starts with
+            Whether you are planning a home renovation, a commercial refresh, or
+            improvements to an industrial property, our approach starts with
             listening. From there, we help turn ideas into a considered scope
             and a clear path forward.
           </p>
@@ -76,7 +76,7 @@ export default function AboutUs() {
 
       <section className="bg-[#f5f2ed]">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:px-10 md:grid-cols-2 md:items-center md:gap-16 md:py-24 lg:px-12">
-          <div className="relative order-2 aspect-[4/3] overflow-hidden bg-neutral-200 md:order-1">
+          <div className="relative order-2 aspect-4/3 overflow-hidden bg-neutral-200 md:order-1">
             <Image
               src="/images/services/dream-haven.jpg"
               alt="A comfortable home interior with warm materials"

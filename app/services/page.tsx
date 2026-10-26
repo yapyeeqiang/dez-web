@@ -8,28 +8,44 @@ const services = [
     title: "Residential renovation",
     description:
       "Refresh, rework, or reimagine your home with a plan grounded in your needs, the character of the property, and the way you live.",
-    includes: ["Interior upgrades", "Room-by-room improvements", "Home refreshes"],
+    includes: [
+      "Interior upgrades",
+      "Room-by-room improvements",
+      "Home refreshes",
+    ],
   },
   {
     number: "02",
     title: "Interior design & space planning",
     description:
       "Make better use of the space you have with help shaping layouts, finishes, and a cohesive visual direction.",
-    includes: ["Layout planning", "Material and finish direction", "Design development"],
+    includes: [
+      "Layout planning",
+      "Material and finish direction",
+      "Design development",
+    ],
   },
   {
     number: "03",
     title: "Construction & project coordination",
     description:
       "Bring the moving parts of a building project into one considered plan, with clear scope and organised coordination.",
-    includes: ["Scope definition", "Build coordination", "Progress communication"],
+    includes: [
+      "Scope definition",
+      "Build coordination",
+      "Progress communication",
+    ],
   },
   {
     number: "04",
     title: "Commercial & industrial property improvements",
     description:
       "Plan practical upgrades for offices, retail, workshops, storage, and operational spaces around how the property is used.",
-    includes: ["Commercial spaces", "Industrial properties", "Functional upgrades"],
+    includes: [
+      "Commercial spaces",
+      "Industrial properties",
+      "Functional upgrades",
+    ],
   },
   {
     number: "05",
@@ -73,7 +89,7 @@ export default function Services() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/25 to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/65 via-black/25 to-black/10" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-14 pt-24 text-white sm:px-10 sm:pb-20 lg:px-12">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
             How we can help
@@ -146,8 +162,8 @@ export default function Services() {
               From first conversation to a clear next step.
             </h2>
             <p className="mt-5 max-w-xl leading-7 text-neutral-600">
-              Good coordination starts with understanding what matters. We
-              work with you to clarify the brief before the work begins.
+              Good coordination starts with understanding what matters. We work
+              with you to clarify the brief before the work begins.
             </p>
             <Link
               href="/contact-us"
@@ -156,7 +172,7 @@ export default function Services() {
               Discuss your project
             </Link>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div className="relative aspect-4/3 overflow-hidden bg-neutral-200">
             <Image
               src="/images/services/dream-haven.jpg"
               alt="A welcoming residential interior with balanced materials"
